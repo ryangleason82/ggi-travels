@@ -1,0 +1,56 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+export async function getStaticPaths() {
+  const blog = await getCollection("blog");
+
+  return blog.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <div class="flex justify-center mb-5 md:pt-32 pt-6">
+    <a class="back-link flex flex-row items-center" href="/blog/"></a>
+      <p class="ml-3 items-center">Back to Destinations</p></a
+    >
+  </div>
+
+  <div class="flex justify-center">
+    <div class="flex flex-col xl:w-1/2 md:w-2/3 w-full mx-5">
+      <div class="prose">
+        <h1>
+          {entry.data.title}
+        </h1>
+        <p class="text-gray-600 md:prose-xl -mt-9">
+          {entry.data.description}
+        </p>
+        <p class="mb-2 -mt-5">
+          Written by {entry.data.author} on {
+            new Date(entry.data.publishDate).toLocaleDateString()
+          }
+        </p>
+      </div>
+      <div class="flex flex-col justify-center">
+        {entry.data.img && <img src={entry.data.img} />}
+        <div class="flex justify-center mt-10">
+          <div class="prose lg:prose-xl md:prose-base sm:prose-sm">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style></style>

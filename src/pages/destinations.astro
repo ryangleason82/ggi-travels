@@ -1,8 +1,22 @@
 ---
+import GuideGrid from "../components/GuideGrid.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 ---
 
 <BaseLayout>
-    <div>destinations</div>
+  <div
+    class="flex flex-row justify-center text-5xl text-center font-bold mt-20"
+  >
+    Destinations
+  </div>
+  <div class="flex text-xl w-full justify-center text-center my-5">
+    <div class="flex md:w-1/2 mx-4 justify-center">
+      Check out some itineraries for these locations
+    </div>
+  </div>
+  <div class="flex justify-center items-center w-full">
+    <div class="flex justify-center">
+      <GuideGrid />
+    </div>
+  </div>
 </BaseLayout>

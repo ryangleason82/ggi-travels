@@ -1,8 +1,53 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 ---
 
 <BaseLayout>
-    <div>conatct</div>
+  <div
+    class="flex flex-row justify-center text-5xl text-center font-bold mt-20"
+  >
+    Need to talk about an upcoming trip?
+  </div>
+  <div class="flex text-xl w-full justify-center text-center my-5">
+    <div class="flex md:w-1/2 mx-4 justify-center">
+      I'm here for all of your travel needs.
+    </div>
+  </div>
+  <div class="flex justify-center bg-gray-100 bg-opacity-50 rounded-xl">
+    <div class="my-5 w-full text-center">
+      <div class="font-bold text-xl">Send me a message</div>
+      <div class="">
+        <form method="POST">
+          <div class="my-5 rounded-xl">
+            <input
+              type="text"
+              class="rounded-xl p-4 w-3/4 md:w-1/2"
+              name="name"
+              placeholder="Name"
+            />
+          </div>
+          <div class="my-5">
+            <input
+              type="email"
+              class="rounded-xl p-4 w-3/4 md:w-1/2"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="my-5">
+            <textarea
+              name="message"
+              class="rounded-xl p-4 w-3/4 md:w-1/2"
+              placeholder="Message"></textarea>
+          </div>
+          <div class="">
+            <button
+              class="click text-l bg-yellow-400 hover:bg-yellow-500 text-white rounded-full py-4 px-8"
+              type="submit">Send</button
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
