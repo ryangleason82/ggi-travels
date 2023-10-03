@@ -5,7 +5,7 @@ const destinations = (await getCollection("destinations")).sort(
 );
 ---
 
-<div class="grid md:grid-cols-2 grid-cols-1 md:w-2/3 w-full mx-10">
+<div class="grid md:grid-cols-2 grid-cols-1 md:w-2/3 w-full md:mx-10">
   {
     destinations.map((project) => (
       <div class="m-3">
