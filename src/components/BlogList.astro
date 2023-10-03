@@ -7,23 +7,26 @@ const blog = (await getCollection("blog")).sort(
 
 <div class="flex flex-col xl:w-1/2 md:w-2/3 my-5">
   {
-    blog.map((project) => (
+    blog.map((blog) => (
       <div class="m-3">
+        <a href={`/blog/${blog.slug}/`}>
         <div class="flex md:flex-row flex-col mt-4">
+          
           <img
             class="rounded-xl md:w-1/2 "
-            src={project.data.img}
+            src={blog.data.img}
             loading="lazy"
             alt=""
           />
-
+        
           <div class="flex flex-col md:w-1/2 md:px-6 justify-center">
             <div class="xl:text-3xl text-xl font-bold pb-4">
-              {project.data.title}
+              {blog.data.title}
             </div>
-            <div class="xl:text-xl text-md ">{project.data.description}</div>
+            <div class="xl:text-xl text-md ">{blog.data.description}</div>
           </div>
         </div>
+      </a>
       </div>
     ))
   }
