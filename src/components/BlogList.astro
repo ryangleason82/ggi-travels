@@ -1,28 +1,44 @@
 ---
 import { getCollection } from "astro:content";
 const blog = (await getCollection("blog")).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 ---
 
-<div class="grid md:grid-cols-2 grid-cols-1 md:w-2/3 w-full mx-10">
+<div class="flex flex-col xl:w-1/2 md:w-2/3 my-5">
   {
     blog.map((project) => (
       <div class="m-3">
-        <a href={`/blog/${project.slug}/`}>
-          <div class="relative">
-            <span class="absolute top-2 left-2 bg-white font-bold px-2 rounded-xl">
+        <div class="flex md:flex-row flex-col mt-4">
+          <img
+            class="rounded-xl md:w-1/2 "
+            src={project.data.img}
+            loading="lazy"
+            alt=""
+          />
+
+          <div class="flex flex-col md:w-1/2 md:px-6 justify-center">
+            <div class="xl:text-3xl text-xl font-bold pb-4">
               {project.data.title}
-            </span>
-            <img
-              class="rounded-xl"
-              src={project.data.img}
-              loading="lazy"
-              alt=""
-            />
+            </div>
+            <div class="xl:text-xl text-md ">{project.data.description}</div>
           </div>
-        </a>
+        </div>
       </div>
     ))
   }
 </div>
+
+<!-- <a href={`/blog/${project.slug}/`}>
+  <div class="relative">
+    <span class="absolute top-2 left-2 bg-white font-bold px-2 rounded-xl">
+      {project.data.title}
+    </span>
+    <img
+      class="rounded-xl"
+      src={project.data.img}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+</a> -->

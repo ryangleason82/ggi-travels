@@ -1,8 +1,8 @@
 ---
-title: How to travel the world on a budget
+title: How to Travel the World on a Budget
 author: Ryan Gleason
 publishDate: 2021-03-02 00:00:00
-img: '/assets/destinations/beijing.jpg'
+img: '/assets/blog/budget.jpg'
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   Traveling the world on a budget can be a rewarding experience, and it is more possible than you might think. Here are a few tips to help you get started

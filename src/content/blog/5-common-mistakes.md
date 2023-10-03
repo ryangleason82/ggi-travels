@@ -1,8 +1,8 @@
 ---
-title: The 5 most common travel mistakes and how to avoid them
+title: The 5 Most Common Travel Mistakes and How to Avoid Them
 author: Ryan Gleason
 publishDate: 2021-03-02 00:00:00
-img: '/assets/destinations/beijing.jpg'
+img: '/assets/blog/mistake.jpg'
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   By avoiding these common travel mistakes, you can have a more enjoyable and stress-free travel experience

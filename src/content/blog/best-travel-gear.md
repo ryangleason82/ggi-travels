@@ -1,8 +1,8 @@
 ---
-title: The best travel gear for every type of trip
+title: The Best Travel Gear for Every Type of Trip
 author: Ryan Gleason
 publishDate: 2021-03-02 00:00:00
-img: '/assets/destinations/beijing.jpg'
+img: '/assets/blog/gear.jpg'
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   The best travel gear for every type of trip depends on the destination, the activities you'll be doing, and your personal preferences. However, there are a few essential items that every traveler should have, regardless of the type of trip they're taking.

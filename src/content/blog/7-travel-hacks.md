@@ -1,8 +1,8 @@
 ---
-title: 7 travel hacks that will make your life easier
+title: 7 Travel Hacks That Will Make Your Life Easier
 author: Ryan Gleason
 publishDate: 2021-03-02 00:00:00
-img: '/assets/destinations/beijing.jpg'
+img: '/assets/blog/hack.jpg'
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   With a little planning and preparation, you can make your travel life much easier. By following these tips, you can save time, money, and stress.
