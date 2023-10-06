@@ -3,30 +3,46 @@ import { getCollection } from "astro:content";
 const blog = (await getCollection("blog")).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
+const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+
 ---
 
-<div class="flex flex-col xl:w-1/2 md:w-2/3 my-5">
+<div class="flex flex-col xl:w-3/5 md:w-3/4 my-5">
   {
     blog.map((blog) => (
       <div class="m-3">
         <a href={`/blog/${blog.slug}/`}>
-        <div class="flex md:flex-row flex-col mt-4">
-          
-          <img
-            class="rounded-xl md:w-1/2 "
-            src={blog.data.img}
-            loading="lazy"
-            alt=""
-          />
-        
-          <div class="flex flex-col md:w-1/2 md:px-6 justify-center">
-            <div class="xl:text-3xl text-xl font-bold pb-4">
-              {blog.data.title}
-            </div>
-            <div class="xl:text-xl text-md ">{blog.data.description}</div>
+          <div class="flex md:flex-row flex-col mt-4">
+            <img
+              class="rounded-xl md:w-1/2 "
+              src={blog.data.img}
+              loading="lazy"
+              alt=""
+            />
+
+            <div class="flex flex-col md:w-1/2 md:px-6 justify-center">
+              <div class="text-gray-500 max-sm:mt-5">
+                {" "}
+                <time
+                  datetime={String(blog.data.publishDate)}
+                  class="inline-block"
+                >
+                  {new Date(blog.data.publishDate).toLocaleDateString('en-us', options)}
+                </time>
+              </div>
+              <div class="xl:text-3xl text-xl font-bold pb-3">
+                {blog.data.title}
+              </div>
+              <div class="xl:text-xl text-md ">{blog.data.description}</div>
+              <div class="flex flex-row mt-3">{
+                blog.data.tags.map(i => (
+                  <div class="mr-3 bg-gray-100 p-2 rounded-xl">{i}</div>
+                ))
+              }</div>
+              
+              </div>
           </div>
-        </div>
-      </a>
+        </a>
       </div>
     ))
   }
